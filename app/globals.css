@@ -4,44 +4,66 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* --- Ana Temeller --- */ /* Tam siyah değil, okunabilir koyu antrasit (Gray-900) */
+  /* Light tema: yumuşak, nötr tonlar */
 
-  /* --- Marka Renkleri (Mint Yeşili) --- */
-  /* Tasarımdaki ana yeşil */
-  --primary: oklch(0.205 0 0); 
-  --primary-foreground: oklch(0.985 0 0);
+  /* Marka rengi – hafif mint / teal */
+  --primary: oklch(0.78 0.07 168);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-dark: oklch(0.68 0.1 168);
 
-  /* Hover durumları veya gradient bitişleri için biraz daha koyusu */
-  --primary-dark: #008f7a; 
+  /* Kart arka planları */
+  --secondary: oklch(0.97 0.01 250);
+  --secondary-foreground: oklch(0.23 0.02 260);
 
-  /* --- İkincil Alanlar (Kartlar, Arka Planlar) --- */
-  /* Fintek kartlarının arkasındaki çok açık mint/gri tonu */
-  --secondary: oklch(0.97 0 0); 
-  --secondary-foreground: oklch(0.205 0 0);
+  /* Pasif metin ve yüzeyler */
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.55 0.02 250);
 
-  /* --- Pasif Metinler ve Çizgiler --- */
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0); /* Gri açıklama metinleri için */
+  --border: oklch(0.9 0.01 250);
+  --input: oklch(0.9 0.01 250);
 
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  /* Genel yüzeyler */
+  --radius: 0.625rem;
+  --background: oklch(0.99 0.01 250);
+  --foreground: oklch(0.2 0.02 260);
+  --card: oklch(0.995 0 0);
+  --card-foreground: oklch(0.2 0.02 260);
+  --popover: var(--card);
+  --popover-foreground: var(--card-foreground);
+  --accent: oklch(0.965 0.01 250);
+  --accent-foreground: oklch(0.23 0.02 260);
 
-  /* --- Tasarım Detayları --- */
-  --radius: 0.625rem; /* Tasarımdaki yuvarlatılmış köşeler (Rounded-xl) */ --background: oklch(1 0 0); --foreground: oklch(0.145 0 0); --card: oklch(1 0 0); --card-foreground: oklch(0.145 0 0); --popover: oklch(1 0 0); --popover-foreground: oklch(0.145 0 0); --accent: oklch(0.97 0 0); --accent-foreground: oklch(0.205 0 0); --destructive: oklch(0.577 0.245 27.325); --ring: oklch(0.708 0 0); --chart-1: oklch(0.646 0.222 41.116); --chart-2: oklch(0.6 0.118 184.704); --chart-3: oklch(0.398 0.07 227.392); --chart-4: oklch(0.828 0.189 84.429); --chart-5: oklch(0.769 0.188 70.08); --sidebar: oklch(0.985 0 0); --sidebar-foreground: oklch(0.145 0 0); --sidebar-primary: oklch(0.205 0 0); --sidebar-primary-foreground: oklch(0.985 0 0); --sidebar-accent: oklch(0.97 0 0); --sidebar-accent-foreground: oklch(0.205 0 0); --sidebar-border: oklch(0.922 0 0); --sidebar-ring: oklch(0.708 0 0);
+  --destructive: oklch(0.63 0.21 25);
+  --ring: oklch(0.75 0.06 168);
+
+  /* Grafik ve sidebar renkleri – çok kritik değil, soft tuttuk */
+  --chart-1: oklch(0.7 0.16 40);
+  --chart-2: oklch(0.68 0.12 190);
+  --chart-3: oklch(0.55 0.08 230);
+  --chart-4: oklch(0.78 0.16 100);
+  --chart-5: oklch(0.75 0.14 70);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.2 0.02 260);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 /* --- Dark Mode Ayarları (Opsiyonel ama hazır olsun) --- */
 @media (prefers-color-scheme: dark) {
   :root {
-
-    --primary: #00BFA5; /* Marka rengi dark modda değişmez */
+    --primary: #00bfa5; /* Marka rengi dark modda değişmez */
     --primary-foreground: #ffffff;
 
-    --secondary: #1F2937;
+    --secondary: #e5f4f1;
     --secondary-foreground: #ffffff;
 
-    --muted: #1F2937;
-    --muted-foreground: #9CA3AF;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
 
     --border: #374151;
     --input: #374151;
@@ -109,7 +131,11 @@ body {
 
 /* Tasarımdaki Gradient Buton Efekti İçin Yardımcı Class */
 .btn-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
   color: white;
   transition: opacity 0.3s ease;
 }
@@ -119,37 +145,75 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Göz yormayan, derin ama çok koyu olmayan arka plan */
+  --background: oklch(0.18 0.02 260);
+  --foreground: oklch(0.92 0.01 250); /* Saf beyaz değil, hafif kirli beyaz */
+
+  --card: oklch(0.22 0.02 260); /* Kartlar arka plandan bir tık daha açık */
+  --card-foreground: oklch(0.92 0.01 250);
+
+  --popover: oklch(0.22 0.02 260);
+  --popover-foreground: oklch(0.92 0.01 250);
+
+  /* Primary rengini dark modda biraz daha parlatıyoruz (Neon etkisi için) */
+  --primary: oklch(0.82 0.08 168);
+  --primary-foreground: oklch(0.1 0.02 260);
+
+  --secondary: oklch(0.28 0.02 260);
+  --secondary-foreground: oklch(0.92 0.01 250);
+
+  --muted: oklch(0.28 0.02 260);
+  --muted-foreground: oklch(
+    0.65 0.02 250
+  ); /* Okunabilirliği artırılmış pasif metin */
+
+  --accent: oklch(0.32 0.03 260);
+  --accent-foreground: oklch(0.92 0.01 250);
+
+  --destructive: oklch(0.55 0.18 25);
+  --border: oklch(0.32 0.02 260); /* Sınırlar çok keskin değil */
+  --input: oklch(0.32 0.02 260);
+  --ring: oklch(0.82 0.08 168);
+
+  --sidebar: oklch(0.2 0.02 260);
+  --sidebar-foreground: oklch(0.92 0.01 250);
+}
+
+/* Header nav underline effect */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 @layer base {

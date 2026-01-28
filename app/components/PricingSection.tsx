@@ -74,13 +74,16 @@ const plans: Plan[] = [
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="bg-primary/20 py-12 sm:py-16">
+    <section
+      id="pricing"
+      className="bg-primary/20 py-12 sm:py-16 dark:bg-slate-900/60"
+    >
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col items-center gap-3 text-center">
-          <h2 className="text-2xl font-bold text-black sm:text-3xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             Fiyatlandırma
           </h2>
-          <p className="text-sm text-gray-500 sm:text-base">
+          <p className="text-sm text-muted-foreground sm:text-base">
             Finansal hedeflerinize uygun planı seçin. İstediğiniz zaman iptal
             edebilirsiniz.
           </p>
@@ -90,18 +93,20 @@ const PricingSection = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`flex flex-col gap-4 rounded-xl border p-6 shadow-sm hover:bg-primary/10 hover:shadow-md transition-all duration-300 hover:-translate-y-2 ${
+              className={`flex flex-col gap-4 rounded-xl p-6 shadow-sm hover:bg-primary/10 hover:shadow-md transition-all duration-300 hover:-translate-y-2 ${
                 plan.highlight
-                  ? "border-primary/40 border-2 bg-white shadow-md"
-                  : "border-gray-100 bg-white"
+                  ? "border-primary/40 border-2 bg-card shadow-md"
+                  : "border-border bg-card"
               }`}
             >
               <div className="flex flex-col gap-2">
-                <h4 className="text-lg font-medium text-black sm:text-xl">
+                <h4 className="text-lg font-medium text-foreground sm:text-xl">
                   {plan.name}
                 </h4>
                 <div>{plan.price}</div>
-                <h6 className="text-xs text-gray-500">{plan.description}</h6>
+                <h6 className="text-xs text-muted-foreground">
+                  {plan.description}
+                </h6>
               </div>
               <div className="flex flex-col items-start gap-2">
                 {plan.features.map((feature) => (

@@ -9,13 +9,13 @@ import QuestionsSection from "./components/QuestionsSection";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-linear-to-br from-blue-50 via-white to-emerald-50 font-sans">
+    <div className="flex min-h-screen items-center justify-center bg-linear-to-br from-blue-50 via-white to-emerald-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 font-sans">
       <BackToTopButton />
       <main className="flex min-h-screen w-full max-w-8xl flex-col gap-50 items-center justify-between py-32 px-16 bg-whitesm:items-start">
-      <AnimatedSection delay={0}>
+        <AnimatedSection delay={0}>
           <AboutSection />
         </AnimatedSection>
-      <AnimatedSection delay={120}>
+        <AnimatedSection delay={120}>
           <FeatureSection />
         </AnimatedSection>
         <AnimatedSection delay={240}>

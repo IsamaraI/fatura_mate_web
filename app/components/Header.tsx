@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaBars, FaMoon, FaTimes, FaWallet } from "react-icons/fa";
+import { FaBars, FaTimes, FaWallet } from "react-icons/fa";
+import { ThemeModeToggle } from "./ThemeModeToggle";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleHashClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    hash: string
+    hash: string,
   ) => {
     e.preventDefault();
     const element = document.querySelector(hash);
@@ -28,14 +29,19 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm px-8 py-4 fixed top-5 left-10 right-10 z-50 rounded-xl">
+    <header className="bg-card shadow-sm px-8 py-4 fixed top-5 left-10 right-10 z-50 rounded-xl">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="rounded-xl bg-primary p-2 shadow-sm">
             <FaWallet className="text-white text-xl" />
           </div>
-          <Link href="/#about" onClick={(e) => handleHashClick(e, "#about")}>
-            <h1 className="text-xl font-bold text-black cursor-pointer">
+          <Link
+            href="/#about"
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#about")
+            }
+          >
+            <h1 className="text-xl font-bold text-foreground cursor-pointer">
               FaturaMate
             </h1>
           </Link>
@@ -44,32 +50,55 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/#features"
-            onClick={(e) => handleHashClick(e, "#features")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#features")
+            }
           >
-            <span className="text-gray-700 hover:text-primary transition-colors cursor-pointer">
-              Özellikler
-            </span>
+            <div className="relative flex flex-col group cursor-pointer">
+              <span className="text-gray-700 group-hover:text-primary transition-colors">
+                Özellikler
+              </span>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
+            </div>
           </Link>
           <Link
             href="/#pricing"
-            onClick={(e) => handleHashClick(e, "#pricing")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#pricing")
+            }
           >
-            <span className="text-gray-700 hover:text-primary transition-colors cursor-pointer">
-              Fiyatlandırma
-            </span>
+            <div className="relative flex flex-col group cursor-pointer">
+              <span className="text-gray-700 group-hover:text-primary transition-colors">
+                Fiyatlandırma
+              </span>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
+            </div>
           </Link>
-          <Link href="/#faq" onClick={(e) => handleHashClick(e, "#faq")}>
-            <span className="text-gray-700 hover:text-primary transition-colors cursor-pointer">
-              SSS
-            </span>
+          <Link
+            href="/#faq"
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#faq")
+            }
+          >
+            <div className="relative flex flex-col group cursor-pointer">
+              <span className="text-gray-700 group-hover:text-primary transition-colors">
+                SSS
+              </span>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
+            </div>
           </Link>
           <Link
             href="/#contact"
-            onClick={(e) => handleHashClick(e, "#contact")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#contact")
+            }
           >
-            <span className="text-gray-700 hover:text-primary transition-colors cursor-pointer">
-              İletişim
-            </span>
+            <div className="relative flex flex-col group cursor-pointer">
+              <span className="text-gray-700 group-hover:text-primary transition-colors">
+                İletişim
+              </span>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
+            </div>
           </Link>
         </div>
 
@@ -88,9 +117,7 @@ const Header = () => {
               <FaBars className="text-gray-700 text-lg" />
             )}
           </button>
-          <div className="flex items-center p-2 rounded-xl bg-gray-200">
-            <FaMoon className="text-gray-700 text-lg cursor-pointer" />
-          </div>
+          <ThemeModeToggle />
         </div>
       </div>
       <div
@@ -102,7 +129,9 @@ const Header = () => {
         <nav className="flex flex-col gap-3 pb-2">
           <Link
             href="/#features"
-            onClick={(e) => handleHashClick(e, "#features")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#features")
+            }
           >
             <span className="block text-gray-700 hover:text-primary transition-colors cursor-pointer">
               Özellikler
@@ -110,20 +139,29 @@ const Header = () => {
           </Link>
           <Link
             href="/#pricing"
-            onClick={(e) => handleHashClick(e, "#pricing")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#pricing")
+            }
           >
             <span className="block text-gray-700 hover:text-primary transition-colors cursor-pointer">
               Fiyatlandırma
             </span>
           </Link>
-          <Link href="/#faq" onClick={(e) => handleHashClick(e, "#faq")}>
+          <Link
+            href="/#faq"
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#faq")
+            }
+          >
             <span className="block text-gray-700 hover:text-primary transition-colors cursor-pointer">
               SSS
             </span>
           </Link>
           <Link
             href="/#contact"
-            onClick={(e) => handleHashClick(e, "#contact")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleHashClick(e, "#contact")
+            }
           >
             <span className="block text-gray-700 hover:text-primary transition-colors cursor-pointer">
               İletişim
