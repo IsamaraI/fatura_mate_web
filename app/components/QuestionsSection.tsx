@@ -57,7 +57,7 @@ const QuestionsSection = () => {
                   className="flex items-center justify-between text-left"
                   aria-expanded={isOpen}
                 >
-                  <h3 className="text-xs font-bold text-black sm:text-lg">
+                  <h3 className="text-xs font-bold text-foreground sm:text-lg">
                     {question.question}
                   </h3>
                   <FaChevronDown

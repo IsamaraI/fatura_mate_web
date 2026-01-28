@@ -48,13 +48,15 @@ const plans: Plan[] = [
       "Finansını ciddiye alanlar için ekstra özellikler ve Yapay Zeka Desteği ile sınırsız özellikler",
     price: (
       <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold text-gray-700">₺499,99 /ay</span>
+        <span className="text-lg font-semibold text-foreground">
+          ₺499,99 /ay
+        </span>
         <div className="flex flex-wrap items-center gap-2">
           <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
             Yıllık %17 tasarruf
           </span>
           <span className="text-sm text-gray-400 line-through">₺5.999,99</span>
-          <span className="text-xl font-bold text-black">₺4.999,99</span>
+          <span className="text-xl font-bold text-foreground">₺4.999,99</span>
           <span className="text-xs font-light text-gray-500">/yıl</span>
         </div>
       </div>

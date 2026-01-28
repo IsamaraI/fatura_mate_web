@@ -55,7 +55,7 @@ const Header = () => {
             }
           >
             <div className="relative flex flex-col group cursor-pointer">
-              <span className="text-gray-700 group-hover:text-primary transition-colors">
+              <span className="text-foreground group-hover:text-primary transition-colors">
                 Özellikler
               </span>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
@@ -68,7 +68,7 @@ const Header = () => {
             }
           >
             <div className="relative flex flex-col group cursor-pointer">
-              <span className="text-gray-700 group-hover:text-primary transition-colors">
+              <span className="text-foreground group-hover:text-primary transition-colors">
                 Fiyatlandırma
               </span>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
@@ -81,7 +81,7 @@ const Header = () => {
             }
           >
             <div className="relative flex flex-col group cursor-pointer">
-              <span className="text-gray-700 group-hover:text-primary transition-colors">
+              <span className="text-foreground group-hover:text-primary transition-colors">
                 SSS
               </span>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
@@ -94,7 +94,7 @@ const Header = () => {
             }
           >
             <div className="relative flex flex-col group cursor-pointer">
-              <span className="text-gray-700 group-hover:text-primary transition-colors">
+              <span className="text-foreground group-hover:text-primary transition-colors">
                 İletişim
               </span>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
