@@ -68,15 +68,14 @@ const Footer = () => {
             <h2 className="text-lg font-bold text-foreground">Yasal</h2>
             <ul className="flex flex-col gap-2">
               <li className="text-muted-foreground text-sm hover:text-primary transition-all duration-300">
-                <Link
-                  href="https://amusing-periodical-3bc.notion.site/FaturaMate-Gizlilik-Politikas-2e0217951faf80d9870bea4dc5dbfdec"
-                  target="_blank"
-                >
+                <Link href="/gizlilik-politikasi" target="_blank">
                   Gizlilik Politikası
                 </Link>
               </li>
               <li className="text-muted-foreground text-sm hover:text-primary transition-all duration-300">
-                <Link href="/">Kullanım Koşulları</Link>
+                <Link href="/kullanim-kosullari" target="_blank">
+                  Kullanım Koşulları
+                </Link>
               </li>
             </ul>
           </div>
